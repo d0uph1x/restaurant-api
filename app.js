@@ -12,6 +12,9 @@ app.get('/restaurants/api/v1/meals', (req, res) => {
     res.status(200).json({ status: true, data: meals })
 })
 
+app.get('*', (req, res) => {
+    res.status(200).json({ message: 'Welcome to the Restaurant, Please check the list' })
+})
 const PORT = process.env.PORT || 5400
 app.listen(PORT, () => {
     console.log(`Backend running on port ${PORT}`)
